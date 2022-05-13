@@ -1,38 +1,40 @@
 package com.bridgelabz.line_comparison;
-import java.util.Scanner;
+import  java.util.Scanner;
 
 public class EqualityOfTwoLines {
-    public static void main(String args[]) {
-        int x1, x2, y1, y2;
+    public static void main(String[] args) {
 
-        double length;
+        System.out.println("Welcome to Line comparison");
 
-        Scanner sc = new Scanner(System.in);
+        Scanner sc= new Scanner(System.in);
+        System.out.print("Enter coordinates of x1:  ");
+        int x1= sc.nextInt();
+        System.out.print("Enter coordinates of x2:  ");
+        int x2= sc.nextInt();
+        System.out.print("Enter coordinates of y1: ");
+        int y1= sc.nextInt();
+        System.out.print("Enter coordinates of y2: ");
+        int y2= sc.nextInt();
+        double length1=Math.sqrt(((x2-x1)*(x2-x1))+((y2-y1)*(y2-y1)));
+        System.out.println("Total Length of line 1 is : " +length1);
+        System.out.print("Enter  coordinates of x3:  ");
+        int x3= sc.nextInt();
+        System.out.print("Enter coordinates of x4:  ");
+        int x4= sc.nextInt();
+        System.out.print("Enter coordinates of  y3: ");
+        int y3= sc.nextInt();
+        System.out.print("Enter coordinates of  y4: ");
+        int y4= sc.nextInt();
+        double length2=Math.sqrt(((x4-x3)*(x4-x3))+((y4-y3)*(y4-y3)));
+        System.out.println("Total Length of line 2 is : " +length2);
+        if( length1 == length2 ){
+            System.out.println("TWO Lines are Equal");
 
-        System.out.println("enter x1 point");
-
-        x1 = sc.nextInt();
-
-        System.out.println("enter y1 point");
-
-        y1 = sc.nextInt();
-
-        System.out.println("enter x2point");
-
-        x2 = sc.nextInt();
-
-        System.out.println("enter y2 point");
-
-        y2 = sc.nextInt();
-
-        length = Math.sqrt((x2 - x1) ^ 2 + (y2 - y1) ^ 2);
-
-        System.out.println("Length of Lines is : " + "(" + x1 + "," + y1 + ")," + "(" + x2 + "," + y2 + ")===>" + length);
-
-        System.out.println(" Checking Equality of Two Lengths:");
-        System.out.println(x1 + " == " + y1 + " : " + (x1 == y1));
-        System.out.println(x2 + " == " + y2 + " : " + (x2 == y2));
-
+        }
+        else if(length1 > length2){
+            System.out.println("Line1 is greater than Line2");
+        }
+        else
+            System.out.println("Line1 is smaller than Line2");
     }
-
 }
